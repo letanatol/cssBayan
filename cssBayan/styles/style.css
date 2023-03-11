@@ -46,7 +46,7 @@ input {
 
 .label__content {
 	display: none;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 
 .label__image {
@@ -71,10 +71,8 @@ input:checked~.accordion__label .label__title {
 
 input:checked~.accordion__label .label__content {
 	display: block;
-	transform: scale(1);
-	/* transition: transform 3s ease; */
+	transition: transform 0.25s;
 }
-
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 @media screen and (min-width: 820px) {
@@ -85,19 +83,16 @@ input:checked~.accordion__label .label__content {
 	.label__title {
 		font-size: 2.0rem;
 		padding: 1.5rem 0;
-		margin-bottom: 2.0rem;
-		transition-property: color;
-		/* transition-duration: 1.0s; */
 	}
 
 	.accordion__label {
 		cursor: pointer;
-		/* transition: cursor 0.ms; */
 	}
 
 	.label__image {
 		margin-bottom: 1.5rem;
 	}
+
 
 	.label__icon {
 		display: none;
@@ -105,27 +100,37 @@ input:checked~.accordion__label .label__content {
 
 	.accordion__label:hover .label__content {
 		display: block;
+		transform: scale(1.1);
 	}
 
-	.accordion__label:hover img {}
+	.accordion__label:hover .label__image-meme {}
 
 	.accordion:hover .label__title {
 		color: #000;
-		/* transition-property: color;
-		transition-duration: 1.0s; */
 	}
 
 	.accordion:hover .label__icon {
 		display: block;
 	}
 
-	.accordion__label:active .label__content {
+
+
+	/* active */
+	.accordion__label:active {
 		cursor: cell;
+	}
+
+	.accordion__label:active .label__content {
 		opacity: 0.5;
+	}
+
+	.accordion__label:active .label__icon {
+		color: rgb(0, 55, 255);
 	}
 
 	.accordion__label:active .label__header .label__title {
 		color: rgb(0, 55, 255);
+		cursor: cell;
 	}
 }
 
@@ -142,7 +147,6 @@ input:checked~.accordion__label .label__content {
 	.label__title {
 		font-size: 2.5rem;
 		padding: 2.0rem 0;
-		margin-bottom: 2.5rem;
 	}
 
 	.label__image {
