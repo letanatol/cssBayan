@@ -35,9 +35,11 @@ input {
 .label__header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
-.label__title {
+.label__title,
+.label__icon {
 	padding: 1.0rem 0;
 	font-size: 1.0rem;
 	font-weight: 700;
@@ -65,7 +67,12 @@ input {
 	max-height: 30rem;
 }
 
-input:checked~.accordion__label .label__title {
+input:checked~.accordion__label .label__icon i {
+	transform: rotate(-45deg);
+}
+
+input:checked~.accordion__label .label__title,
+.label__icon {
 	color: #000;
 }
 
@@ -80,7 +87,8 @@ input:checked~.accordion__label .label__content {
 		font-size: 2.5rem;
 	}
 
-	.label__title {
+	.label__title,
+	.label__icon {
 		font-size: 2.0rem;
 		padding: 1.5rem 0;
 	}
@@ -93,24 +101,24 @@ input:checked~.accordion__label .label__content {
 		margin-bottom: 1.5rem;
 	}
 
-
 	.label__icon {
-		display: none;
+		opacity: 0;
 	}
 
 	.accordion__label:hover .label__content {
 		display: block;
-		transform: scale(1.1);
+		/* transform: scale(1.1); */
 	}
 
 	.accordion__label:hover .label__image-meme {}
 
-	.accordion:hover .label__title {
+	.accordion:hover .label__title,
+	.label__icon {
 		color: #000;
 	}
 
 	.accordion:hover .label__icon {
-		display: block;
+		opacity: 1;
 	}
 
 
