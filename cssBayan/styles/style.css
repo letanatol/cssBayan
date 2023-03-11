@@ -81,6 +81,21 @@ input:checked~.accordion__label .label__content {
 	transition: transform 0.25s;
 }
 
+@media (hover: hover) {
+	.accordion__label:hover .label__content {
+		display: block;
+	}
+
+	.accordion:hover .label__title,
+	.label__icon {
+		color: #000;
+	}
+
+	.accordion:hover .label__icon {
+		opacity: 1;
+	}
+}
+
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 @media screen and (min-width: 820px) {
 	h1 {
@@ -105,21 +120,6 @@ input:checked~.accordion__label .label__content {
 		opacity: 0;
 	}
 
-	.accordion__label:hover .label__content {
-		display: block;
-		/* transform: scale(1.1); */
-	}
-
-	.accordion__label:hover .label__image-meme {}
-
-	.accordion:hover .label__title,
-	.label__icon {
-		color: #000;
-	}
-
-	.accordion:hover .label__icon {
-		opacity: 1;
-	}
 
 
 
