@@ -11,7 +11,7 @@ body {
 }
 
 .wrapper {
-	max-width: 60rem;
+	max-width: 50rem;
 	margin: 0 auto;
 	padding: 1.2rem;
 }
@@ -46,29 +46,21 @@ input {
 	color: rgb(0, 55, 255);
 }
 
-.label__content {
-	display: none;
-	overflow: hidden;
-}
-
 .label__image {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 0.5rem;
 }
 
-.label__image image {
-	transform: scale(0);
-	/* transition: all 3s ease; */
-}
-
 .label__image-meme {
 	max-width: 100%;
-	max-height: 30rem;
+	height: 0;
+	transition: height 0.5s ease;
 }
 
 input:checked~.accordion__label .label__icon i {
-	transform: rotate(-45deg);
+	transform: rotate(45deg);
+	transition: transform 0.5s;
 }
 
 input:checked~.accordion__label .label__title,
@@ -76,14 +68,14 @@ input:checked~.accordion__label .label__title,
 	color: #000;
 }
 
-input:checked~.accordion__label .label__content {
-	display: block;
-	transition: transform 0.25s;
+input:checked~.accordion__label .label__image-meme {
+	height: 22rem;
 }
 
 @media (hover: hover) {
-	.accordion__label:hover .label__content {
-		display: block;
+	.accordion__label:hover .label__image-meme {
+		height: 26rem;
+		transition: height 0.5s ease;
 	}
 
 	.accordion:hover .label__title,
@@ -94,18 +86,34 @@ input:checked~.accordion__label .label__content {
 	.accordion:hover .label__icon {
 		opacity: 1;
 	}
+
+	.accordion__label:hover .label__icon i {
+		transform: rotate(45deg);
+		transition: transform 0.5s;
+	}
 }
 
 /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media screen and (min-width: 540px) {
+	h1 {
+		font-size: 1.7rem;
+	}
+
+	.label__title,
+	.label__icon {
+		font-size: 1.5rem;
+	}
+}
+
 @media screen and (min-width: 820px) {
 	h1 {
-		font-size: 2.5rem;
+		font-size: 2.0rem;
 	}
 
 	.label__title,
 	.label__icon {
 		font-size: 2.0rem;
-		padding: 1.5rem 0;
+		padding: 1.2rem 0;
 	}
 
 	.accordion__label {
@@ -113,22 +121,24 @@ input:checked~.accordion__label .label__content {
 	}
 
 	.label__image {
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.0rem;
 	}
 
 	.label__icon {
 		opacity: 0;
 	}
 
-
-
+	input:checked~.accordion__label .label__image-meme {
+		height: 26rem;
+		max-width: 100%;
+	}
 
 	/* active */
 	.accordion__label:active {
 		cursor: cell;
 	}
 
-	.accordion__label:active .label__content {
+	.accordion__label:active .label__image {
 		opacity: 0.5;
 	}
 
@@ -142,10 +152,25 @@ input:checked~.accordion__label .label__content {
 	}
 }
 
+@media screen and (min-width: 1200px) {
+	h1 {
+		font-size: 2.5rem;
+	}
 
+	.label__title {
+		font-size: 2.2rem;
+		padding: 1.5rem 0;
+	}
 
+	.label__image {
+		margin-bottom: 2.0rem;
+	}
 
-
+	input:checked~.accordion__label .label__image-meme {
+		height: 30rem;
+		max-width: 100%;
+	}
+}
 
 @media screen and (min-width: 1920px) {
 	h1 {
@@ -154,7 +179,7 @@ input:checked~.accordion__label .label__content {
 
 	.label__title {
 		font-size: 2.5rem;
-		padding: 2.0rem 0;
+		padding: 1.7rem 0;
 	}
 
 	.label__image {
