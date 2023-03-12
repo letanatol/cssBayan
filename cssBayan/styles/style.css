@@ -49,11 +49,12 @@ input {
 .label__image {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 
 .label__image-meme {
 	max-width: 100%;
+	object-fit: contain;
 	height: 0;
 	transition: height 0.5s ease;
 }
@@ -74,7 +75,7 @@ input:checked~.accordion__label .label__image-meme {
 
 @media (hover: hover) {
 	.accordion__label:hover .label__image-meme {
-		height: 26rem;
+		height: 22rem;
 		transition: height 0.5s ease;
 	}
 
@@ -93,7 +94,6 @@ input:checked~.accordion__label .label__image-meme {
 	}
 }
 
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 @media screen and (min-width: 540px) {
 	h1 {
 		font-size: 1.7rem;
@@ -121,7 +121,7 @@ input:checked~.accordion__label .label__image-meme {
 	}
 
 	.label__image {
-		margin-bottom: 1.0rem;
+		padding-bottom: 1.0rem;
 	}
 
 	.label__icon {
@@ -158,12 +158,12 @@ input:checked~.accordion__label .label__image-meme {
 	}
 
 	.label__title {
-		font-size: 2.2rem;
-		padding: 1.5rem 0;
+		font-size: 2.1rem;
+		padding: 1.4rem 0;
 	}
 
 	.label__image {
-		margin-bottom: 2.0rem;
+		padding-bottom: 2.0rem;
 	}
 
 	input:checked~.accordion__label .label__image-meme {
@@ -178,11 +178,11 @@ input:checked~.accordion__label .label__image-meme {
 	}
 
 	.label__title {
-		font-size: 2.5rem;
-		padding: 1.7rem 0;
+		font-size: 2.3rem;
+		padding: 1.5rem 0;
 	}
 
 	.label__image {
-		margin-bottom: 2.5rem;
+		padding-bottom: 2.5rem;
 	}
 }
