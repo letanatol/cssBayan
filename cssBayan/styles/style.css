@@ -27,7 +27,7 @@ input {
 .accordion__label {
 	display: flex;
 	flex-direction: column;
-	border-top: .125px solid #989898;
+	border-top: .125rem solid #989898;
 }
 
 .label__header {
