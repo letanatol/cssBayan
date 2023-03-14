@@ -1,0 +1,186 @@
+* {
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Sono, Verdana sans-serif;
+	background-color: azure;
+}
+
+.wrapper {
+	max-width: 50rem;
+	margin: 0 auto;
+	padding: 1.2rem;
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+input {
+	appearance: none;
+}
+
+.accordion__label {
+	display: flex;
+	flex-direction: column;
+	border-top: .125rem solid #989898;
+}
+
+.label__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.label__title,
+.label__icon {
+	padding: 1.0rem 0;
+	font-size: 1.0rem;
+	font-weight: 700;
+	color: rgb(0, 55, 255);
+}
+
+.label__image {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 0.5rem;
+}
+
+.label__image-meme {
+	max-width: 100%;
+	object-fit: contain;
+	height: 0;
+	transition: height 0.5s ease;
+}
+
+input:checked~.accordion__label .label__icon i {
+	transform: rotate(45deg);
+	transition: transform 0.5s;
+}
+
+input:checked~.accordion__label .label__title,
+.label__icon {
+	color: #000;
+}
+
+input:checked~.accordion__label .label__image-meme {
+	height: 22rem;
+}
+
+@media (hover: hover) {
+	.accordion__label:hover .label__image-meme {
+		height: 22rem;
+		transition: height 0.5s ease;
+	}
+
+	.accordion:hover .label__title,
+	.label__icon {
+		color: #000;
+	}
+
+	.accordion:hover .label__icon {
+		opacity: 1;
+	}
+
+	.accordion__label:hover .label__icon i {
+		transform: rotate(45deg);
+		transition: transform 0.5s;
+	}
+}
+
+@media screen and (min-width: 540px) {
+	h1 {
+		font-size: 1.7rem;
+	}
+
+	.label__title,
+	.label__icon {
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 820px) {
+	h1 {
+		font-size: 2.0rem;
+	}
+
+	.label__title,
+	.label__icon {
+		font-size: 2.0rem;
+		padding: 1.2rem 0;
+	}
+
+	.accordion__label {
+		cursor: pointer;
+	}
+
+	.label__image {
+		padding-bottom: 1.0rem;
+	}
+
+	.label__icon {
+		opacity: 0;
+	}
+
+	input:checked~.accordion__label .label__image-meme {
+		height: 26rem;
+		max-width: 100%;
+	}
+
+	/* active */
+	.accordion__label:active {
+		cursor: cell;
+	}
+
+	.accordion__label:active .label__image {
+		opacity: 0.5;
+	}
+
+	.accordion__label:active .label__icon {
+		color: rgb(0, 55, 255);
+	}
+
+	.accordion__label:active .label__header .label__title {
+		color: rgb(0, 55, 255);
+		cursor: cell;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	.label__title {
+		font-size: 2.1rem;
+		padding: 1.4rem 0;
+	}
+
+	.label__image {
+		padding-bottom: 2.0rem;
+	}
+
+	input:checked~.accordion__label .label__image-meme {
+		height: 30rem;
+		max-width: 100%;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	h1 {
+		font-size: 3.0rem;
+	}
+
+	.label__title {
+		font-size: 2.3rem;
+		padding: 1.5rem 0;
+	}
+
+	.label__image {
+		padding-bottom: 2.5rem;
+	}
+}
